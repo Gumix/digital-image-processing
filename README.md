@@ -2,15 +2,18 @@
 
 Here are the programs that I wrote during the Digital Image Processing class in 2008.
 
-1. [Thresholding](#thresholding-lab1_1c)
-2. [Floyd-Steinberg dithering](#floyd-steinberg-dithering-lab1_2c)
-3. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
-4. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
-5. [Alpha compositing](#alpha-compositing-lab3c)
-6. [Histogram equalization](#histogram-equalization-lab4c)
-7. [Convolution](#convolution-lab5c)
-8. [Median filter](#median-filter-lab6c)
-9. [Segmentation](#segmentation-lab7c)
+1. Grayscale to black-and-white
+    1. [Thresholding](#thresholding-lab1_1c)
+    2. [Floyd-Steinberg dithering](#floyd-steinberg-dithering-lab1_2c)
+    3. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering-lab1_3c)
+2. Image scaling
+    1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
+    2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
+3. [Alpha compositing](#alpha-compositing-lab3c)
+4. [Histogram equalization](#histogram-equalization-lab4c)
+5. [Convolution](#convolution-lab5c)
+6. [Median filter](#median-filter-lab6c)
+7. [Segmentation](#segmentation-lab7c)
 
 ---
 ## Thresholding ([lab1_1.c](lab1_1/lab1_1.c))
@@ -23,6 +26,12 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_2/Lena_out.png) |
+
+---
+## Jarvis-Judice-Ninke dithering ([lab1_3.c](lab1_3/lab1_3.c))
+| Input | Output |
+| ----- | ------ |
+| ![Input](images/Lena.png) | ![Output](lab1_3/Lena_out.png) |
 
 ---
 ## Nearest-neighbor interpolation ([lab2_1.c](lab2_1/lab2_1.c))
