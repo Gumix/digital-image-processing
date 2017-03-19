@@ -6,6 +6,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     1. [Thresholding](#thresholding-lab1_1c)
     2. [Floyd-Steinberg dithering](#floyd-steinberg-dithering-lab1_2c)
     3. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering-lab1_3c)
+    4. [Atkinson dithering](#atkinson-dithering-lab1_4c)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
@@ -32,6 +33,12 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_3/Lena_out.png) |
+
+---
+## Atkinson dithering ([lab1_4.c](lab1_4/lab1_4.c))
+| Input | Output |
+| ----- | ------ |
+| ![Input](images/Lena.png) | ![Output](lab1_4/Lena_out.png) |
 
 ---
 ## Nearest-neighbor interpolation ([lab2_1.c](lab2_1/lab2_1.c))
