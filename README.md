@@ -8,6 +8,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     3. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering-lab1_3c)
     4. [Atkinson dithering](#atkinson-dithering-lab1_4c)
     5. [Ordered dithering](#ordered-dithering-lab1_5c)
+    6. [Random dithering](#random-dithering-lab1_6c)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
@@ -46,6 +47,12 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output (4x4 Bayer matrix) |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_5/Lena_out_4.png) |
+
+---
+## Random dithering ([lab1_6.c](lab1_6/lab1_6.c))
+| Input | Output (threshold = 100, noise = 40) |
+| ----- | ------ |
+| ![Input](images/Lena.png) | ![Output](lab1_6/Lena_out_100_40.png) |
 
 ---
 ## Nearest-neighbor interpolation ([lab2_1.c](lab2_1/lab2_1.c))
