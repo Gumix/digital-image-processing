@@ -1,12 +1,13 @@
 # digital-image-processing
 
-Here are the programs that I wrote during the Digital Image Processing class in 2008.
+Here are the programs that I wrote during the Digital Image Processing class in 2008, as well as some new experiments.
 
 1. Grayscale to black-and-white
     1. [Thresholding](#thresholding-lab1_1c)
     2. [Floyd-Steinberg dithering](#floyd-steinberg-dithering-lab1_2c)
     3. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering-lab1_3c)
     4. [Atkinson dithering](#atkinson-dithering-lab1_4c)
+    5. [Ordered dithering](#ordered-dithering-lab1_5c)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
@@ -39,6 +40,12 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_4/Lena_out.png) |
+
+---
+## Ordered dithering ([lab1_5.c](lab1_5/lab1_5.c))
+| Input | Output (4x4 Bayer matrix) |
+| ----- | ------ |
+| ![Input](images/Lena.png) | ![Output](lab1_5/Lena_out_4.png) |
 
 ---
 ## Nearest-neighbor interpolation ([lab2_1.c](lab2_1/lab2_1.c))
