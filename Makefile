@@ -4,7 +4,7 @@ LDIR = /opt/local/lib/
 LIBS = -lc -lpng16
 CFLAGS = -Wall -march=native -Ofast -Wa,-q
 OUT_DIR = build
-LABS = lab1_1 lab1_2 lab1_3 lab1_4 lab1_5 lab1_6 lab1_7 lab2_1 lab2_2 lab3 lab4_2 lab5 lab6 lab7
+LABS = lab1_1 lab1_2 lab1_3 lab1_4 lab1_5 lab1_6 lab1_7 lab2_1 lab2_2 lab3 lab4_1 lab4_2 lab5 lab6 lab7
 BINS = $(addprefix $(OUT_DIR)/,${LABS})
 OBJS = $(addsuffix .o,${BINS})
 

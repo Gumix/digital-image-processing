@@ -15,6 +15,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
 3. [Alpha compositing](#alpha-compositing-lab3c)
 4. Intensity transformations
+    1. [Gamma correction](#gamma-correction-lab4_1c)
     2. [Linear contrast stretching](#linear-contrast-stretching-lab4_2c)
 5. [Convolution](#convolution-lab5c)
 6. [Median filter](#median-filter-lab6c)
@@ -79,6 +80,18 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | <ul><li>[Goldhill.png](images/Goldhill.png) as top</li><li>[Lena.png](images/Lena.png) as bottom</li><li>[Peppers.png](images/Peppers.png) as alpha channel</li></ul> | ![Output](lab3/Goldhill_Lena_Peppers_out.png) |
+
+---
+## Gamma correction ([lab4_1.c](lab4_1/lab4_1.c))
+| Input | Output (c = 1.0, gamma = 0.6) |
+| ----- | ------ |
+| ![Input](images/House.png) | ![Output](lab4_1/House_out_1.0_0.6.png) |
+| ![Input](lab4_1/House_in_hist.png) | ![Output](lab4_1/House_out_1.0_0.6_hist.png) |
+
+| Input | Output (c = 1.5, gamma = 1.5) |
+| ----- | ------ |
+| ![Input](images/House.png) | ![Output](lab4_1/House_out_1.5_1.5.png) |
+| ![Input](lab4_1/House_in_hist.png) | ![Output](lab4_1/House_out_1.5_1.5_hist.png) |
 
 ---
 ## Linear contrast stretching ([lab4_2.c](lab4_2/lab4_2.c))
