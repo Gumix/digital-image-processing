@@ -11,7 +11,7 @@ OBJS = $(addsuffix .o,${BINS})
 .PHONY: all
 all: $(OUT_DIR) ${BINS}
 
-${BINS}: %: $(OUT_DIR)/png_wrapper.o %.o
+${BINS}: %: $(OUT_DIR)/png_wrapper.o $(OUT_DIR)/histogram.o %.o
 	$(CC) -o $@ $^ -L $(LDIR) $(LIBS)
 
 .SECONDEXPANSION:
@@ -19,6 +19,9 @@ ${OBJS}: $(OUT_DIR)/%.o: %/$$*.c
 	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
 
 $(OUT_DIR)/png_wrapper.o: png_wrapper.c
+	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
+
+$(OUT_DIR)/histogram.o: histogram.c
 	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
 
 $(OUT_DIR):
