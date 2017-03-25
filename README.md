@@ -10,6 +10,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     5. [Ordered dithering](#ordered-dithering-lab1_5c)
     6. [Random dithering](#random-dithering-lab1_6c)
     7. [Clustered dithering](#clustered-dithering-lab1_7c)
+    8. [Bit-plane slicing](#bit-plane-slicing-lab1_8c)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
@@ -62,6 +63,16 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_7/Lena_out.png) |
+
+---
+## Bit-plane slicing ([lab1_8.c](lab1_8/lab1_8.c))
+| Output (bit 6) | Output (bit 5) |
+| ----- | ------ |
+| ![Output](lab1_8/Lena_out_6.png) | ![Output](lab1_8/Lena_out_5.png) |
+
+| Output (bit 4) | Output (bit 3) |
+| ----- | ------ |
+| ![Output](lab1_8/Lena_out_4.png) | ![Output](lab1_8/Lena_out_3.png) |
 
 ---
 ## Nearest-neighbor interpolation ([lab2_1.c](lab2_1/lab2_1.c))
