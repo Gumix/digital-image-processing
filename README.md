@@ -14,7 +14,8 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation-lab2_1c)
     2. [Bilinear interpolation](#bilinear-interpolation-lab2_2c)
 3. [Alpha compositing](#alpha-compositing-lab3c)
-4. [Histogram equalization](#histogram-equalization-lab4c)
+4. Intensity transformations
+    2. [Linear contrast stretching](#linear-contrast-stretching-lab4_2c)
 5. [Convolution](#convolution-lab5c)
 6. [Median filter](#median-filter-lab6c)
 7. [Segmentation](#segmentation-lab7c)
@@ -80,11 +81,11 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | <ul><li>[Goldhill.png](images/Goldhill.png) as top</li><li>[Lena.png](images/Lena.png) as bottom</li><li>[Peppers.png](images/Peppers.png) as alpha channel</li></ul> | ![Output](lab3/Goldhill_Lena_Peppers_out.png) |
 
 ---
-## Histogram equalization ([lab4.c](lab4/lab4.c))
-| Input | Output (delta = 100) |
+## Linear contrast stretching ([lab4_2.c](lab4_2/lab4_2.c))
+| Input | Output (delta = 1000) |
 | ----- | ------ |
-| ![Input](images/Goldhill.png) | ![Output](lab4/Goldhill_out_100.png) |
-| ![Input](lab4/Goldhill_in_hist.png) | ![Output](lab4/Goldhill_out_100_hist.png) |
+| ![Input](images/Auto.png) | ![Output](lab4_2/Auto_out_1000.png) |
+| ![Input](lab4_2/Auto_in_hist.png) | ![Output](lab4_2/Auto_out_1000_hist.png) |
 
 ---
 ## Convolution ([lab5.c](lab5/lab5.c))
