@@ -18,6 +18,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 4. Intensity transformations
     1. [Gamma correction](#gamma-correction-lab4_1c)
     2. [Linear contrast stretching](#linear-contrast-stretching-lab4_2c)
+    3. [Histogram equalization](#histogram-equalization-lab4_3c)
 5. [Convolution](#convolution-lab5c)
 6. [Median filter](#median-filter-lab6c)
 7. [Segmentation](#segmentation-lab7c)
@@ -110,6 +111,13 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | ----- | ------ |
 | ![Input](images/Auto.png) | ![Output](lab4_2/Auto_out_1000.png) |
 | ![Input](lab4_2/Auto_in_hist.png) | ![Output](lab4_2/Auto_out_1000_hist.png) |
+
+---
+## Histogram equalization ([lab4_3.c](lab4_3/lab4_3.c))
+| Input | Output |
+| ----- | ------ |
+| ![Input](images/Goldhill.png) | ![Output](lab4_3/Goldhill_out.png) |
+| ![Input](lab4_3/Goldhill_in_hist.png) | ![Output](lab4_3/Goldhill_out_hist.png) |
 
 ---
 ## Convolution ([lab5.c](lab5/lab5.c))
