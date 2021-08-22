@@ -5,8 +5,8 @@
 static void process_images(struct Image top, struct Image bot,
 						   struct Image alpha, struct Image out)
 {
-	for (int y = 0; y < out.height; y++)
-		for (int x = 0; x < out.width; x++)
+	for (size_t y = 0; y < out.height; y++)
+		for (size_t x = 0; x < out.width; x++)
 		{
 			double a = alpha.pixels[y][x] / 255.0;
 
@@ -50,7 +50,7 @@ int main(int argc, char * const argv[])
 	printf("Alpha channel input file \"%s\" opened (width = %u, height = %u)\n",
 		   input3_filename, in3.width, in3.height);
 
-	struct Image out = { in1.width, in2.height };
+	struct Image out = { in1.width, in2.height, NULL };
 	alloc_pixels(&out);
 
 	process_images(in1, in2, in3, out);

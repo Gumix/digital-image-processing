@@ -85,7 +85,7 @@ int main(int argc, char * const argv[])
 		   kernel_filename, kernel.size, kernel.size);
 
 	struct Image out = { in.width  - kernel.size + 1,
-						 in.height - kernel.size + 1 };
+						 in.height - kernel.size + 1, NULL };
 	alloc_pixels(&out);
 
 	process_image(in, kernel, out);

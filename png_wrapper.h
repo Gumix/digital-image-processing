@@ -1,5 +1,4 @@
-#ifndef PNG_WRAPPER_H
-#define PNG_WRAPPER_H
+#pragma once
 
 #include <png.h>
 
@@ -15,5 +14,3 @@ void free_pixels(struct Image img);
 
 struct Image read_grayscale_png(const char *file_name);
 void write_grayscale_png(struct Image img, const char *file_name);
-
-#endif

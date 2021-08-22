@@ -6,8 +6,8 @@
 
 static void process_image(struct Image img, double c, double gamma)
 {
-	for (int y = 0; y < img.height; y++)
-		for (int x = 0; x < img.width; x++)
+	for (size_t y = 0; y < img.height; y++)
+		for (size_t x = 0; x < img.width; x++)
 		{
 			double in = img.pixels[y][x] / 255.0;
 			int out = c * pow(in, gamma) * 255.0 + 0.5;
@@ -41,7 +41,7 @@ int main(int argc, char * const argv[])
 	printf("Input file \"%s\" opened (width = %u, height = %u)\n",
 		   input_filename, img.width, img.height);
 
-	struct Image hist1 = { HIST_WIDTH, HIST_HEIGHT };
+	struct Image hist1 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist1);
 	histogram(img, hist1);
 	write_grayscale_png(hist1, hist1_filename);
@@ -49,7 +49,7 @@ int main(int argc, char * const argv[])
 
 	process_image(img, c, gamma);
 
-	struct Image hist2 = { HIST_WIDTH, HIST_HEIGHT };
+	struct Image hist2 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist2);
 	histogram(img, hist2);
 	write_grayscale_png(hist2, hist2_filename);

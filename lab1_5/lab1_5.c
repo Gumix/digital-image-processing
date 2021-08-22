@@ -26,8 +26,8 @@ static void process_image(struct Image img)
 		for (int x = 0; x < N; x++)
 			T[y][x] = 255 * (M44[y][x] + 0.5) / (N * N);
 
-	for (int y = 0; y < img.height; y++)
-		for (int x = 0; x < img.width; x++)
+	for (size_t y = 0; y < img.height; y++)
+		for (size_t x = 0; x < img.width; x++)
 			img.pixels[y][x] = img.pixels[y][x] > T[y % N][x % N] ? 255 : 0;
 }
 

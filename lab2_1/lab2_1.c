@@ -47,7 +47,7 @@ int main(int argc, char * const argv[])
 	printf("Input file \"%s\" opened (width = %u, height = %u)\n",
 		   input_filename, in.width, in.height);
 
-	struct Image out = { in.width * N + 0.5, in.height * N + 0.5 };
+	struct Image out = { in.width * N + 0.5, in.height * N + 0.5, NULL };
 	alloc_pixels(&out);
 
 	process_image(in, out, N);

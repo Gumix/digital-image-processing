@@ -14,7 +14,7 @@ void precalculate(unsigned char *lut, size_t s1, size_t s2)
 		lut[c] = MAX_COLOR;
 }
 
-static void process_image(struct Image in, struct Image out, int delta)
+static void process_image(struct Image in, struct Image out, size_t delta)
 {
 	size_t pixels_count[MAX_COLOR + 1] = { };
 
@@ -22,7 +22,7 @@ static void process_image(struct Image in, struct Image out, int delta)
 		for (size_t x = 0; x < in.width; x++)
 			pixels_count[in.pixels[y][x]]++;
 
-	int s1, s2;
+	size_t s1, s2;
 
 	for (s1 = 0; (pixels_count[s1] <= delta) && (s1 <= MAX_COLOR); s1++);
 
@@ -56,19 +56,19 @@ int main(int argc, char * const argv[])
 	printf("Input file \"%s\" opened (width = %u, height = %u)\n",
 		   input_filename, in.width, in.height);
 
-	struct Image hist1 = { HIST_WIDTH, HIST_HEIGHT };
+	struct Image hist1 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist1);
 	histogram(in, hist1);
 	write_grayscale_png(hist1, hist1_filename);
 	free_pixels(hist1);
 
-	struct Image out = { in.width, in.height };
+	struct Image out = { in.width, in.height, NULL };
 	alloc_pixels(&out);
 	process_image(in, out, delta);
 	free_pixels(in);
 	write_grayscale_png(out, output_filename);
 
-	struct Image hist2 = { HIST_WIDTH, HIST_HEIGHT };
+	struct Image hist2 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist2);
 	histogram(out, hist2);
 	free_pixels(out);

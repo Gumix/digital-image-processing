@@ -87,7 +87,7 @@ int main(int argc, char * const argv[])
 		   aperture_filename, aperture.size, aperture.size);
 
 	struct Image out = { in.width  - aperture.size + 1,
-						 in.height - aperture.size + 1 };
+						 in.height - aperture.size + 1, NULL };
 	alloc_pixels(&out);
 
 	process_image(in, aperture, out);

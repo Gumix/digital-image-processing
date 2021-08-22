@@ -43,7 +43,7 @@ int main(int argc, char * const argv[])
 	printf("Input file \"%s\" opened (width = %u, height = %u)\n",
 		   input_filename, img.width, img.height);
 
-	struct Image hist = { HIST_WIDTH, HIST_HEIGHT };
+	struct Image hist = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist);
 	histogram(img, hist);
 	write_grayscale_png(hist, hist1_filename);

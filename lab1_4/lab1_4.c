@@ -2,7 +2,7 @@
 #include <string.h>
 #include "png_wrapper.h"
 
-static inline void add_sat(struct Image img, int x, int y, double a)
+static inline void add_sat(struct Image img, size_t x, size_t y, double a)
 {
 	if (x < 0 || y < 0 || x >= img.width || y >= img.height)
 		return;
@@ -19,8 +19,8 @@ static inline void add_sat(struct Image img, int x, int y, double a)
 
 static void process_image(struct Image img)
 {
-	for (int y = 0; y < img.height; y++)
-		for (int x = 0; x < img.width; x++)
+	for (size_t y = 0; y < img.height; y++)
+		for (size_t x = 0; x < img.width; x++)
 		{
 			unsigned char old_val = img.pixels[y][x];
 			unsigned char new_val = (old_val / 128) * 255;

@@ -38,7 +38,7 @@ static size_t segmentation(struct Image in, struct Image out)
 	{
 		unsigned char new_color = prev_color + 50 <= 255 ? prev_color + 50 : 50;
 
-		struct Image front = { in.width, in.height };
+		struct Image front = { in.width, in.height, NULL };
 		alloc_pixels(&front);
 
 		for (size_t y = 0; y < front.height; y++)
@@ -115,7 +115,7 @@ int main(int argc, char * const argv[])
 
 	binarization(in, (unsigned char) threshold);
 
-	struct Image out = { in.width, in.height };
+	struct Image out = { in.width, in.height, NULL };
 	alloc_pixels(&out);
 
 	size_t s = segmentation(in, out);

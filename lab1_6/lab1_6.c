@@ -13,8 +13,8 @@ static int rnd(int a)
 static void process_image(struct Image img,
 						  unsigned char threshold, unsigned char noise)
 {
-	for (int y = 0; y < img.height; y++)
-		for (int x = 0; x < img.width; x++)
+	for (size_t y = 0; y < img.height; y++)
+		for (size_t x = 0; x < img.width; x++)
 		{
 			int new = img.pixels[y][x] + rnd(noise);
 			img.pixels[y][x] = new >= threshold ? 255 : 0;
