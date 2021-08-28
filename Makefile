@@ -3,7 +3,9 @@ LDIR = /opt/local/lib/
 LIBS = -lc -lpng16
 CFLAGS = -Wall -Wextra -Werror -O0 -g
 OUT_DIR = build
-LABS = lab1_1 lab1_2 lab1_3 lab1_4 lab1_5 lab1_6 lab1_7 lab1_8 lab2_1 lab2_2 lab3 lab4_1 lab4_2 lab4_3 lab5 lab6 lab7
+LABS = lab1_threshold lab1_bitplane lab1_random lab1_bayer lab1_cluster		\
+	   lab1_floyd lab1_jarvis lab1_atkinson	lab2_nearest lab2_bilinear lab3	\
+	   lab4_gamma lab4_contrast lab4_equalize lab5 lab6 lab7
 BINS = $(addprefix $(OUT_DIR)/,${LABS})
 OBJS = $(addsuffix .o,${BINS})
 
