@@ -13,6 +13,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
         1. [Floyd-Steinberg dithering](#floyd-steinberg-dithering)
         2. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering)
         3. [Atkinson dithering](#atkinson-dithering)
+    6. [Image-based dithering](#image-based-dithering)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation)
     2. [Bilinear interpolation](#bilinear-interpolation)
@@ -79,6 +80,12 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | Input | Output |
 | ----- | ------ |
 | ![Input](images/Lena.png) | ![Output](lab1_atkinson/Lena_out.png) |
+
+---
+## [Image-based dithering](lab1_texture/lab1_texture.c)
+| Input | Output (block size = 8, alpha = 0.6) |
+| ----- | ------ |
+| ![Input](images/Lena.png) ![Input](images/Bark.png) | ![Output](lab1_texture/Lena_Bark_out_8_0.6.png) |
 
 ---
 ## [Nearest-neighbor interpolation](lab2_nearest/lab2_nearest.c)

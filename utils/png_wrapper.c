@@ -10,7 +10,7 @@ void error(const char *msg, ...)
 	vfprintf(stderr, msg, argptr);
 	va_end(argptr);
 	fprintf(stderr, "\n");
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 void alloc_pixels(struct Image *img)

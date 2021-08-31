@@ -4,9 +4,9 @@ LIBS = -lc -lpng16
 CFLAGS = -Wall -Wextra -Werror -O0 -g
 OUT_DIR = build
 LABS = lab1_threshold lab1_bitplane lab1_random lab1_bayer lab1_cluster		\
-	   lab1_floyd lab1_jarvis lab1_atkinson	lab2_nearest lab2_bilinear lab3	\
-	   lab4_gamma lab4_contrast lab4_equalize lab4_ahe lab4_clahe lab5 lab6 \
-	   lab7
+	   lab1_floyd lab1_jarvis lab1_atkinson	lab1_texture lab2_nearest		\
+	   lab2_bilinear lab3 lab4_gamma lab4_contrast lab4_equalize lab4_ahe	\
+	   lab4_clahe lab5 lab6 lab7
 BINS = $(addprefix $(OUT_DIR)/,${LABS})
 OBJS = $(addsuffix .o,${BINS})
 
