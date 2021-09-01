@@ -4,20 +4,8 @@
 
 static void process_image(struct Image img)
 {
-	size_t hist[MAX_COLOR + 1] = { };
-	histogram_calc(hist, img.pixels, 0, img.height, 0, img.width);
-
-	// Cumulative distribution function
-	double cdf[MAX_COLOR + 1];
-	size_t total_pixels = img.height * img.width;
-	cdf[0] = (double) hist[0] / total_pixels;
-
-	for (size_t i = 1; i <= MAX_COLOR; i++)
-		cdf[i] = cdf[i - 1] + (double) hist[i] / total_pixels;
-
-	uint8_t lut[MAX_COLOR + 1];
-	for (size_t i = 0; i <= MAX_COLOR; i++)
-		lut[i] = MIN(cdf[i] * MAX_COLOR, 255);
+	uint8_t lut[NUM_COLORS];
+	cdf_lut_calc(lut, img.pixels, 0, img.height, 0, img.width);
 
 	for (size_t y = 0; y < img.height; y++)
 		for (size_t x = 0; x < img.width; x++)

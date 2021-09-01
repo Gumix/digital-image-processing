@@ -1,15 +1,17 @@
 #include "histogram.h"
 
-void histogram_calc(size_t *hist, uint8_t **pixels,
-					size_t y_start, size_t y_end,
-					size_t x_start, size_t x_end)
+void
+histogram_calc(size_t *hist, uint8_t **pixels,
+			   size_t y_start, size_t y_end,
+			   size_t x_start, size_t x_end)
 {
 	for (size_t y = y_start; y < y_end; y++)
 		for (size_t x = x_start; x < x_end; x++)
 			hist[pixels[y][x]]++;
 }
 
-void histogram_draw(struct Image in, struct Image out)
+void
+histogram_draw(struct Image in, struct Image out)
 {
 	size_t hist[MAX_COLOR + 1] = { };
 	histogram_calc(hist, in.pixels, 0, in.height, 0, in.width);
@@ -36,4 +38,24 @@ void histogram_draw(struct Image in, struct Image out)
 			out.pixels[HIST_HEIGHT - y - 1][x + 1] = 222;
 		}
 	}
+}
+
+void
+cdf_lut_calc(uint8_t *lut, uint8_t **pixels,
+			 size_t y_start, size_t y_end,
+			 size_t x_start, size_t x_end)
+{
+	size_t hist[NUM_COLORS] = { };
+	histogram_calc(hist, pixels, y_start, y_end, x_start, x_end);
+
+	// Cumulative distribution function
+	double cdf[NUM_COLORS];
+	size_t total_pixels = (y_end - y_start) * (x_end - x_start);
+	cdf[0] = (double) hist[0] / total_pixels;
+
+	for (size_t i = 1; i <= MAX_COLOR; i++)
+		cdf[i] = cdf[i - 1] + (double) hist[i] / total_pixels;
+
+	for (size_t i = 0; i <= MAX_COLOR; i++)
+		lut[i] = cdf[i] * MAX_COLOR;
 }
