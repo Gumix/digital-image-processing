@@ -4,24 +4,20 @@
 
 static void process_image(struct Image img)
 {
-	unsigned hist[MAX_COLOR + 1] = { };
-	for (size_t y = 0; y < img.height; y++)
-		for (size_t x = 0; x < img.width; x++)
-			hist[img.pixels[y][x]]++;
+	size_t hist[MAX_COLOR + 1] = { };
+	histogram_calc(hist, img.pixels, 0, img.height, 0, img.width);
 
-	double cdf[MAX_COLOR + 1]; // Cumulative distributive function
-	unsigned total_pixels = img.height * img.width;
-	cdf[0] = hist[0] / (double) total_pixels;
+	// Cumulative distribution function
+	double cdf[MAX_COLOR + 1];
+	size_t total_pixels = img.height * img.width;
+	cdf[0] = (double) hist[0] / total_pixels;
 
 	for (size_t i = 1; i <= MAX_COLOR; i++)
-		cdf[i] = cdf[i - 1] + hist[i] / (double) total_pixels;
+		cdf[i] = cdf[i - 1] + (double) hist[i] / total_pixels;
 
-	unsigned char lut[MAX_COLOR + 1];
+	uint8_t lut[MAX_COLOR + 1];
 	for (size_t i = 0; i <= MAX_COLOR; i++)
-	{
-		int new = cdf[i] * MAX_COLOR;
-		lut[i] = new <= 255 ? new : 255;
-	}
+		lut[i] = MIN(cdf[i] * MAX_COLOR, 255);
 
 	for (size_t y = 0; y < img.height; y++)
 		for (size_t x = 0; x < img.width; x++)
@@ -45,13 +41,13 @@ int main(int argc, char * const argv[])
 
 	struct Image hist = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist);
-	histogram(img, hist);
+	histogram_draw(img, hist);
 	write_grayscale_png(hist, hist1_filename);
 
 	process_image(img);
 	write_grayscale_png(img, output_filename);
 
-	histogram(img, hist);
+	histogram_draw(img, hist);
 	free_pixels(img);
 	write_grayscale_png(hist, hist2_filename);
 	free_pixels(hist);

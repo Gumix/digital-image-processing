@@ -17,13 +17,13 @@ ${BINS}: %: $(OUT_DIR)/png_wrapper.o $(OUT_DIR)/histogram.o %.o
 
 .SECONDEXPANSION:
 ${OBJS}: $(OUT_DIR)/%.o: %/$$*.c
-	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
+	$(CC) -c -o $@ $< -I utils -I $(IDIR) $(CFLAGS)
 
-$(OUT_DIR)/png_wrapper.o: png_wrapper.c
-	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
+$(OUT_DIR)/png_wrapper.o: utils/png_wrapper.c
+	$(CC) -c -o $@ $< -I utils -I $(IDIR) $(CFLAGS)
 
-$(OUT_DIR)/histogram.o: histogram.c
-	$(CC) -c -o $@ $< -I . -I $(IDIR) $(CFLAGS)
+$(OUT_DIR)/histogram.o: utils/histogram.c
+	$(CC) -c -o $@ $< -I utils -I $(IDIR) $(CFLAGS)
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)

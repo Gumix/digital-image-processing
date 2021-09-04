@@ -58,7 +58,7 @@ int main(int argc, char * const argv[])
 
 	struct Image hist1 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist1);
-	histogram(in, hist1);
+	histogram_draw(in, hist1);
 	write_grayscale_png(hist1, hist1_filename);
 	free_pixels(hist1);
 
@@ -70,7 +70,7 @@ int main(int argc, char * const argv[])
 
 	struct Image hist2 = { HIST_WIDTH, HIST_HEIGHT, NULL };
 	alloc_pixels(&hist2);
-	histogram(out, hist2);
+	histogram_draw(out, hist2);
 	free_pixels(out);
 	write_grayscale_png(hist2, hist2_filename);
 	free_pixels(hist2);
