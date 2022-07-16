@@ -23,6 +23,7 @@ Here are the programs that I wrote during the Digital Image Processing class in 
     3. Histogram equalization
         1. [Histogram equalization](#histogram-equalization)
         2. [Adaptive histogram equalization](#adaptive-histogram-equalization)
+        3. [Contrast-limited adaptive histogram equalization](#contrast-limited-adaptive-histogram-equalization)
 5. [Convolution](#convolution)
 6. [Median filter](#median-filter)
 7. [Segmentation](#segmentation)
@@ -129,6 +130,13 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | ----- | ------ |
 | ![Input](images/Goldhill.png) | ![Output](lab4_ahe/Goldhill_out_100.png) |
 | ![Input](lab4_ahe/Goldhill_in_hist.png) | ![Output](lab4_ahe/Goldhill_out_100_hist.png) |
+
+---
+## [Contrast-limited adaptive histogram equalization](lab4_clahe/lab4_clahe.c)
+| Input | Output (block size = 64, clip limit = 2.2) |
+| ----- | ------ |
+| ![Input](images/Goldhill.png) | ![Output](lab4_clahe/Goldhill_out_64_2.2.png) |
+| ![Input](lab4_clahe/Goldhill_in_hist.png) | ![Output](lab4_clahe/Goldhill_out_64_2.2_hist.png) |
 
 ---
 ## [Convolution](lab5/lab5.c)

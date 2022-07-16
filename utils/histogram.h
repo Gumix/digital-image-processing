@@ -21,3 +21,8 @@ void
 cdf_lut_calc(uint8_t *lut, uint8_t **pixels,
 			 size_t y_start, size_t y_end,
 			 size_t x_start, size_t x_end);
+
+void
+cdf_lut_calc_from_hist(uint8_t *lut, size_t *hist,
+					   size_t y_start, size_t y_end,
+					   size_t x_start, size_t x_end);

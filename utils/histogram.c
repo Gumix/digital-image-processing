@@ -47,7 +47,14 @@ cdf_lut_calc(uint8_t *lut, uint8_t **pixels,
 {
 	size_t hist[NUM_COLORS] = { };
 	histogram_calc(hist, pixels, y_start, y_end, x_start, x_end);
+	cdf_lut_calc_from_hist(lut, hist, y_start, y_end, x_start, x_end);
+}
 
+void
+cdf_lut_calc_from_hist(uint8_t *lut, size_t *hist,
+					   size_t y_start, size_t y_end,
+					   size_t x_start, size_t x_end)
+{
 	// Cumulative distribution function
 	double cdf[NUM_COLORS];
 	size_t total_pixels = (y_end - y_start) * (x_end - x_start);
