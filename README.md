@@ -13,7 +13,9 @@ Here are the programs that I wrote during the Digital Image Processing class in 
         1. [Floyd-Steinberg dithering](#floyd-steinberg-dithering)
         2. [Jarvis-Judice-Ninke dithering](#jarvis-judice-ninke-dithering)
         3. [Atkinson dithering](#atkinson-dithering)
-    6. [Image-based dithering](#image-based-dithering)
+    6. Image-based dithering
+        1. [Halftoning with a single texture](#halftoning-with-a-single-texture)
+        2. [Halftoning with texture fusion](#halftoning-with-texture-fusion)
 2. Image scaling
     1. [Nearest-neighbor interpolation](#nearest-neighbor-interpolation)
     2. [Bilinear interpolation](#bilinear-interpolation)
@@ -82,10 +84,16 @@ Here are the programs that I wrote during the Digital Image Processing class in 
 | ![Input](images/Lena.png) | ![Output](lab1_atkinson/Lena_out.png) |
 
 ---
-## [Image-based dithering](lab1_texture/lab1_texture.c)
+## [Halftoning with a single texture](lab1_texture/lab1_texture.c)
 | Input | Output (block size = 8, alpha = 0.6) |
 | ----- | ------ |
 | ![Input](images/Lena.png) ![Input](images/Bark.png) | ![Output](lab1_texture/Lena_Bark_out_8_0.6.png) |
+
+---
+## [Halftoning with texture fusion](lab1_texture2/lab1_texture2.c)
+| Input | Output (block size = 5, alpha = 0.7, threshold1 = 110, threshold2 = 140) |
+| ----- | ------ |
+| ![Input](images/Lena.png) ![Input](images/Pencil_horizontal.png) ![Input](images/Pencil_vertical.png) | ![Output](lab1_texture2/Lena_Pencil_horizontal_Pencil_vertical_out_5_0.7_110_140.png) |
 
 ---
 ## [Nearest-neighbor interpolation](lab2_nearest/lab2_nearest.c)
